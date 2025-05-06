@@ -1,26 +1,45 @@
 package ar.edu.unq.po2.tp3;
 
 public class Punto {
+
+	private int puntoX;
+	private int puntoY;
 	
-	private float x;
-	private float y;
-	public Punto(float x, float y) {
-		super();
-		this.x = x;
-		this.y = y;
+	public int getPuntoY() {
+		return puntoY;
 	}
-	public float getX() {
-		return x;
+
+	public void setPuntoY(int puntoY) {
+		this.puntoY = puntoY;
 	}
-	public void setX(float x) {
-		this.x = x;
+
+	public int getPuntoX() {
+		return puntoX;
 	}
-	public float getY() {
-		return y;
+
+	public void setPuntoX(int puntoX) {
+		this.puntoX = puntoX;
 	}
-	public void setY(float y) {
-		this.y = y;
+	
+	public Punto() {
+		this.setPuntoX(0);
+		this.setPuntoY(0);
+	}
+	
+	public Punto(int x, int y) {
+		this.setPuntoX(x);
+		this.setPuntoY(y);
+	}
+	
+	public void moverPuntoAPosicion(int nuevoX, int nuevoY) {
+        this.puntoX = nuevoX;
+        this.puntoY = nuevoY;
+	}
+	
+	public Punto puntoDeSumarOtroPunto(Punto otroPunto) {
+		int nuevoX = this.puntoX + otroPunto.puntoX;
+		int nuevoY = this.puntoY + otroPunto.puntoY;
+		return new Punto(nuevoX, nuevoY);
 	}
 }
-
 
